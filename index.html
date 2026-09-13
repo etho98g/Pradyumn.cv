@@ -1,0 +1,1505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pradyumn Sharma — Personal Profile &amp; Career Portfolio</title>
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    /* ==========================================================
+       DESIGN SYSTEM (Dark Navy / Indigo / Slate)
+       ========================================================== */
+    :root {
+      --bg-main: #0b1120;
+      --bg-surface: #111c33;
+      --bg-card: #162442;
+      --border: rgba(255, 255, 255, 0.08);
+      
+      --accent-blue: #3b82f6;
+      --accent-emerald: #10b981;
+      --accent-amber: #f59e0b;
+
+      --text-white: #ffffff;
+      --text-main: #e2e8f0;
+      --text-muted: #94a3b8;
+
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.5);
+      --transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      line-height: 1.6;
+      font-size: 15.5px;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(99, 102, 241, 0.06) 0%, transparent 40%);
+      background-attachment: fixed;
+    }
+
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(11, 17, 32, 0.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .navbar {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0.95rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+    }
+
+    .avatar-icon-small {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #3b82f6, #6366f1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 800;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 14px rgba(59, 130, 246, 0.3);
+    }
+
+    .brand-name {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--text-white);
+      letter-spacing: -0.02em;
+    }
+
+    .brand-role {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.92rem;
+      padding: 0.4rem 0.7rem;
+      border-radius: var(--radius-sm);
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--text-white);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: 1px solid var(--border);
+      color: #fff;
+      padding: 0.45rem 0.75rem;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+
+    /* SECTIONS */
+    main {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 5rem;
+    }
+
+    section {
+      margin-bottom: 5.5rem;
+    }
+
+    .section-head {
+      margin-bottom: 2.5rem;
+    }
+
+    .section-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(59, 130, 246, 0.12);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      color: #93c5fd;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.3rem 0.75rem;
+      border-radius: 30px;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-head h2 {
+      font-size: 2.1rem;
+      font-weight: 800;
+      color: var(--text-white);
+      letter-spacing: -0.02em;
+    }
+
+    .section-head p {
+      color: var(--text-muted);
+      font-size: 1rem;
+      margin-top: 0.3rem;
+    }
+
+    /* 1. ABOUT ME */
+    .profile-hero-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 3rem;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 3.5rem;
+      align-items: center;
+      box-shadow: var(--shadow);
+    }
+
+    .profile-photo-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .avatar-ring {
+      width: 190px;
+      height: 190px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #2563eb, #7c3aed);
+      padding: 4px;
+      box-shadow: 0 10px 30px rgba(37, 99, 235, 0.25);
+      margin-bottom: 1.25rem;
+    }
+
+    .avatar-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: #0f172a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4.8rem;
+      color: #93c5fd;
+    }
+
+    .student-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: #34d399;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 0.3rem 0.85rem;
+      border-radius: 30px;
+    }
+
+    .profile-info-col h1 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--text-white);
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+
+    .profile-subtitle {
+      color: #60a5fa;
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-top: 0.35rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .profile-desc {
+      color: var(--text-main);
+      font-size: 1.02rem;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+
+    .profile-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+      background: rgba(0, 0, 0, 0.2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .meta-box h5 {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+    }
+
+    .meta-box p {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--text-white);
+      margin-top: 0.25rem;
+    }
+
+    .meta-box span {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .profile-objective-callout {
+      border-left: 3px solid var(--accent-blue);
+      background: rgba(59, 130, 246, 0.05);
+      padding: 1rem 1.25rem;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-size: 0.95rem;
+    }
+
+    .profile-objective-callout strong {
+      color: var(--text-white);
+      display: block;
+      margin-bottom: 0.25rem;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* 2. STRENGTHS & WEAKNESSES */
+    .sw-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .sw-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem;
+      box-shadow: var(--shadow);
+    }
+
+    .sw-card-head {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.75rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .sw-icon-badge {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+    }
+
+    .icon-strength {
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--accent-emerald);
+    }
+
+    .icon-growth {
+      background: rgba(245, 158, 11, 0.15);
+      color: var(--accent-amber);
+    }
+
+    .sw-card-head h3 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--text-white);
+    }
+
+    .sw-card-head p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .sw-interactive-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .sw-item {
+      background: var(--bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      padding: 0.95rem 1.15rem;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+    }
+
+    .sw-bullet-icon {
+      margin-top: 3px;
+      font-size: 0.95rem;
+    }
+
+    .bullet-emerald { color: var(--accent-emerald); }
+    .bullet-amber { color: var(--accent-amber); }
+
+    .sw-item-text strong {
+      color: var(--text-white);
+    }
+
+    /* 3. CURRICULUM VITAE */
+    .cv-control-panel {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1.35rem;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      font-size: 0.92rem;
+      cursor: pointer;
+      border: none;
+      transition: var(--transition);
+      text-decoration: none;
+      font-family: inherit;
+    }
+
+    .btn-primary {
+      background: #2563eb;
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+    }
+
+    .btn-primary:hover {
+      background: #1d4ed8;
+      transform: translateY(-2px);
+    }
+
+    .btn-dark {
+      background: var(--bg-surface);
+      color: var(--text-white);
+      border: 1px solid var(--border);
+    }
+
+    .btn-dark:hover {
+      background: #1c2e4c;
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Standard A4 CV Container */
+    .cv-paper {
+      background: #ffffff;
+      color: #000000;
+      border-radius: 4px;
+      padding: 3rem 3.5rem;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+      border: 1px solid #cbd5e1;
+    }
+
+    .cv-paper-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 3px solid #0f172a;
+      padding-bottom: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .cv-title-name {
+      font-size: 2.1rem;
+      font-weight: 800;
+      color: #000000;
+      letter-spacing: -0.02em;
+    }
+
+    .cv-subtitle-major {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #1d4ed8;
+      margin-top: 0.2rem;
+    }
+
+    .cv-contact-details {
+      text-align: right;
+      font-size: 0.85rem;
+      color: #1e293b;
+      line-height: 1.5;
+    }
+
+    .cv-section-block {
+      margin-bottom: 1.15rem;
+    }
+
+    .cv-block-title {
+      font-size: 0.92rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #0f172a;
+      border-bottom: 1.5px solid #cbd5e1;
+      padding-bottom: 0.25rem;
+      margin-bottom: 0.65rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .cv-body-text {
+      font-size: 0.9rem;
+      color: #000000;
+      line-height: 1.5;
+    }
+
+    .cv-education-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      margin-top: 0.4rem;
+    }
+
+    .cv-education-table th,
+    .cv-education-table td {
+      border: 1.5px solid #475569;
+      padding: 0.55rem 0.75rem;
+      text-align: left;
+      color: #000000 !important;
+    }
+
+    .cv-education-table th {
+      background: #e2e8f0;
+      color: #000000 !important;
+      font-weight: 800;
+    }
+
+    .cv-education-table td {
+      font-weight: 600;
+    }
+
+    .cv-score-pill {
+      display: inline-block;
+      background: #0f172a;
+      color: #ffffff !important;
+      font-weight: 700;
+      font-size: 0.8rem;
+      padding: 0.15rem 0.55rem;
+      border-radius: 4px;
+    }
+
+    .cv-score-pill.green {
+      background: #064e3b;
+    }
+
+    .cv-columns-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .cv-list-items {
+      padding-left: 1.25rem;
+      font-size: 0.88rem;
+      color: #000000;
+    }
+
+    .cv-list-items li {
+      margin-bottom: 0.3rem;
+      font-weight: 500;
+    }
+
+    /* Job Apply Box inside CV */
+    .cv-apply-box {
+      background: #f8fafc;
+      border: 1.5px solid #cbd5e1;
+      border-left: 4px solid #1d4ed8;
+      padding: 0.75rem 1rem;
+      border-radius: 4px;
+      margin-top: 0.5rem;
+    }
+
+    .cv-apply-link {
+      color: #1d4ed8;
+      font-weight: 700;
+      text-decoration: underline;
+      word-break: break-all;
+    }
+
+    .cv-declaration-box {
+      font-size: 0.88rem;
+      color: #000000;
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-left: 4px solid #0f172a;
+      padding: 0.75rem 1rem;
+      margin-top: 0.85rem;
+      font-weight: 500;
+      line-height: 1.45;
+    }
+
+    .cv-sign-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      font-size: 0.85rem;
+      color: #000000;
+      font-weight: 600;
+    }
+
+    .cv-sign-area {
+      text-align: center;
+    }
+
+    .cv-sign-bar {
+      width: 150px;
+      border-bottom: 1.5px dashed #000000;
+      margin-bottom: 0.35rem;
+    }
+
+    /* 4. APPLY FOR A JOB */
+    .apply-card-container {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2.75rem;
+      box-shadow: var(--shadow);
+    }
+
+    .apply-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 1.75rem 2rem;
+      border-radius: var(--radius-md);
+      margin-bottom: 1.5rem;
+    }
+
+    .job-title-h3 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--text-white);
+    }
+
+    .job-company-tag {
+      color: #60a5fa;
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-top: 0.2rem;
+    }
+
+    .job-desc-p {
+      color: var(--text-main);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    /* MODAL & TOAST */
+    .modal-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(4, 8, 16, 0.85);
+      backdrop-filter: blur(8px);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+      padding: 1rem;
+    }
+
+    .modal-backdrop.active {
+      display: flex;
+    }
+
+    .modal-window {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      width: 100%;
+      max-width: 900px;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow);
+    }
+
+    .modal-top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 1.8rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .modal-top-bar h3 {
+      color: var(--text-white);
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+
+    .modal-close-trigger {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: 1.4rem;
+      cursor: pointer;
+    }
+
+    .modal-close-trigger:hover { color: #fff; }
+
+    .modal-inner-scroll {
+      padding: 1.5rem;
+      overflow-y: auto;
+    }
+
+    .toast-popup {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: #1e293b;
+      border: 1px solid var(--accent-blue);
+      color: #fff;
+      padding: 0.85rem 1.5rem;
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      box-shadow: var(--shadow);
+      z-index: 3000;
+      opacity: 0;
+      transform: translateY(15px);
+      transition: var(--transition);
+      pointer-events: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .toast-popup.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* RESPONSIVENESS */
+    @media (max-width: 900px) {
+      .profile-hero-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+        padding: 2rem;
+      }
+      .profile-photo-col {
+        margin: 0 auto;
+      }
+      .profile-meta-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .sw-grid {
+        grid-template-columns: 1fr;
+      }
+      .cv-paper-header {
+        flex-direction: column;
+        gap: 0.85rem;
+      }
+      .cv-contact-details {
+        text-align: left;
+      }
+      .cv-columns-2 {
+        grid-template-columns: 1fr;
+      }
+      .apply-header-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.25rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .mobile-menu-btn { display: block; }
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--bg-surface);
+        flex-direction: column;
+        padding: 1.25rem;
+        gap: 0.75rem;
+        border-bottom: 1px solid var(--border);
+        display: none;
+      }
+      .nav-links.active { display: flex; }
+      .profile-meta-grid { grid-template-columns: 1fr; }
+      .cv-paper { padding: 1.5rem 1.2rem; }
+
+      .cv-education-table,
+      .cv-education-table thead,
+      .cv-education-table tbody,
+      .cv-education-table th,
+      .cv-education-table td,
+      .cv-education-table tr {
+        display: block;
+        width: 100%;
+      }
+
+      .cv-education-table thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+      }
+
+      .cv-education-table tr {
+        margin-bottom: 1.15rem;
+        border: 1.5px solid #cbd5e1 !important;
+        border-left: 5px solid #0f172a !important;
+        border-radius: 8px;
+        padding: 0.85rem 1rem;
+        background: #f8fafc !important;
+      }
+
+      .cv-education-table td {
+        border: none !important;
+        background: transparent !important;
+        padding: 0.3rem 0 !important;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 0.92rem;
+      }
+
+      .cv-education-table td::before {
+        content: attr(data-label);
+        font-size: 0.72rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        color: #475569;
+        margin-bottom: 2px;
+      }
+
+      .cv-education-table td strong {
+        color: #000000 !important;
+        font-size: 1.05rem;
+      }
+    }
+
+    @media print {
+      body { background: #fff !important; color: #000 !important; }
+      header, .cv-control-panel, .section-head, #about, #strengths, #apply {
+        display: none !important;
+      }
+      #cv, #printableResumeCard, #printableResumeCard * {
+        visibility: visible !important;
+      }
+      #cv {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      .cv-paper {
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+      }
+      .cv-education-table,
+      .cv-education-table thead,
+      .cv-education-table tbody,
+      .cv-education-table th,
+      .cv-education-table td,
+      .cv-education-table tr {
+        display: revert !important;
+      }
+      .cv-education-table thead tr {
+        position: static !important;
+      }
+      .cv-education-table td::before {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <nav class="navbar">
+      <a href="#home" class="brand-logo">
+        <div class="avatar-icon-small">P</div>
+        <div>
+          <div class="brand-name">Pradyumn Sharma</div>
+          <div class="brand-role">Commerce &amp; Office Administration</div>
+        </div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#strengths">Strengths &amp; Weaknesses</a></li>
+        <li><a href="#cv">CV</a></li>
+        <li><a href="#apply">Apply for Job</a></li>
+      </ul>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </nav>
+  </header>
+
+  <main id="home">
+
+    <!-- 1. ABOUT ME -->
+    <section id="about">
+      <div class="section-head">
+        <span class="section-chip"><i class="fa-regular fa-user"></i> Profile</span>
+        <h2>About Me</h2>
+        <p>Personal background, education, and career aspirations</p>
+      </div>
+
+      <div class="profile-hero-card">
+        <div class="profile-photo-col">
+          <div class="avatar-ring">
+            <div class="avatar-inner">
+              <i class="fa-solid fa-user-graduate"></i>
+            </div>
+          </div>
+          <span class="student-badge">
+            <i class="fa-solid fa-circle-check"></i> Age 16 &bull; Undergrad
+          </span>
+        </div>
+
+        <div class="profile-info-col">
+          <h1>Pradyumn Sharma</h1>
+          <div class="profile-subtitle">
+            Bachelor of Commerce (B.Com 1st Year) &bull; GDC Dharamshala
+          </div>
+
+          <p class="profile-desc">
+            A 16-year-old, academically driven commerce undergraduate studying at Government Degree College (GDC) Dharamshala under Himachal Pradesh University (HPU). With consistently high academic standings throughout secondary education, I specialize in combining analytical problem solving with modern computing, office document generation, and advanced MS Excel spreadsheet management.
+          </p>
+
+          <div class="profile-meta-grid">
+            <div class="meta-box">
+              <h5>Date of Birth</h5>
+              <p style="color: #38bdf8;">6 October 2009</p>
+              <span>Age: 16 Years</span>
+            </div>
+            <div class="meta-box">
+              <h5>Class 12th Board</h5>
+              <p style="color: #60a5fa;">95.0%</p>
+              <span>Govt. School Dhulara</span>
+            </div>
+            <div class="meta-box">
+              <h5>Class 10th Board</h5>
+              <p style="color: #34d399;">91.0%</p>
+              <span>Green Field Public School</span>
+            </div>
+            <div class="meta-box">
+              <h5>Current Degree</h5>
+              <p style="color: #fbbf24;">B.Com</p>
+              <span>HPU (1st Year)</span>
+            </div>
+          </div>
+
+          <div class="profile-objective-callout">
+            <strong>Career Objective</strong>
+            To secure an entry-level position or internship where I can apply my skills in MS Excel, bookkeeping, and computer operations to improve operational efficiency while continuing my higher education.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. STRENGTHS & WEAKNESSES -->
+    <section id="strengths">
+      <div class="section-head">
+        <span class="section-chip"><i class="fa-solid fa-chart-simple"></i> Assessment</span>
+        <h2>Strengths &amp; Weaknesses</h2>
+        <p>Core competencies and conscious areas of professional development</p>
+      </div>
+
+      <div class="sw-grid">
+        <div class="sw-card">
+          <div class="sw-card-head">
+            <div class="sw-icon-badge icon-strength">
+              <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <div>
+              <h3>My Strengths</h3>
+              <p>Positive assets and core proficiencies</p>
+            </div>
+          </div>
+
+          <ul class="sw-interactive-list">
+            <li class="sw-item">
+              <i class="fa-solid fa-check sw-bullet-icon bullet-emerald"></i>
+              <div class="sw-item-text">
+                <strong>Good Computer Knowledge:</strong> Comfortable with operating systems, general troubleshooting, and software installation.
+              </div>
+            </li>
+            <li class="sw-item">
+              <i class="fa-solid fa-check sw-bullet-icon bullet-emerald"></i>
+              <div class="sw-item-text">
+                <strong>Advanced MS Excel Skills:</strong> Skilled in spreadsheet formulas, VLOOKUP, pivot tables, formatting, and data sorting.
+              </div>
+            </li>
+            <li class="sw-item">
+              <i class="fa-solid fa-check sw-bullet-icon bullet-emerald"></i>
+              <div class="sw-item-text">
+                <strong>MS Word and PowerPoint:</strong> Experienced in creating neat documentation, formal letters, and slide presentations.
+              </div>
+            </li>
+            <li class="sw-item">
+              <i class="fa-solid fa-check sw-bullet-icon bullet-emerald"></i>
+              <div class="sw-item-text">
+                <strong>Data Entry &amp; Spreadsheet Management:</strong> Fast, accurate data recording and record maintenance.
+              </div>
+            </li>
+            <li class="sw-item">
+              <i class="fa-solid fa-check sw-bullet-icon bullet-emerald"></i>
+              <div class="sw-item-text">
+                <strong>Fast Learner:</strong> Rapidly picks up new commerce subjects, digital interfaces, and software tools.
+              </div>
+            </li>
+            <li class="sw-item">
+              <i class="fa-solid fa-check sw-bullet-icon bullet-emerald"></i>
+              <div class="sw-item-text">
+                <strong>Time Management &amp; Problem Solving:</strong> Disciplined approach to numbers, deadlines, and multi-subject schedules.
+              </div>
+            </li>
+            <li class="sw-item">
+              <i class="fa-solid fa-check sw-bullet-icon bullet-emerald"></i>
+              <div class="sw-item-text">
+                <strong>Hindi and English Communication:</strong> Clear verbal and written fluency in both languages.
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="sw-card">
+          <div class="sw-card-head">
+            <div class="sw-icon-badge icon-growth">
+              <i class="fa-solid fa-arrow-trend-up"></i>
+            </div>
+            <div>
+              <h3>My Weaknesses</h3>
+              <p>Self-aware areas managed with proactive improvement</p>
+            </div>
+          </div>
+
+          <ul class="sw-interactive-list">
+            <li class="sw-item">
+              <i class="fa-solid fa-arrow-trend-up sw-bullet-icon bullet-amber"></i>
+              <div class="sw-item-text">
+                <strong>Over-focusing on small details:</strong> I sometimes spend excess time perfecting minor formatting; learning to balance thorough precision with time-efficient workflows.
+              </div>
+            </li>
+            <li class="sw-item">
+              <i class="fa-solid fa-arrow-trend-up sw-bullet-icon bullet-amber"></i>
+              <div class="sw-item-text">
+                <strong>Less professional work experience:</strong> As a 16-year-old undergraduate, formal workplace tenure is limited; currently closing this gap with real projects and practical skill training.
+              </div>
+            </li>
+            <li class="sw-item">
+              <i class="fa-solid fa-arrow-trend-up sw-bullet-icon bullet-amber"></i>
+              <div class="sw-item-text">
+                <strong>Need to improve public speaking:</strong> Working on stage confidence when addressing large unfamiliar crowds through classroom seminars and presentations.
+              </div>
+            </li>
+            <li class="sw-item">
+              <i class="fa-solid fa-arrow-trend-up sw-bullet-icon bullet-amber"></i>
+              <div class="sw-item-text">
+                <strong>Continuously working on technical skills:</strong> Regularly dedicating self-study hours to master upcoming commerce ERP software and accounting tools.
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. CURRICULUM VITAE -->
+    <section id="cv">
+      <div class="section-head">
+        <span class="section-chip"><i class="fa-regular fa-file-lines"></i> Document</span>
+        <h2>Curriculum Vitae</h2>
+        <p>Complete single-page format CV suitable for professional job and internship applications</p>
+      </div>
+
+      <div class="cv-control-panel">
+        <div class="btn-group">
+          <button class="btn btn-dark" onclick="openCVPreviewModal()">
+            <i class="fa-regular fa-eye"></i> View CV
+          </button>
+          <button class="btn btn-primary" onclick="triggerCVPrint()">
+            <i class="fa-solid fa-print"></i> Print CV
+          </button>
+          <!-- Downloads clean HTML file with Job Application Link integrated inside -->
+          <button class="btn btn-dark" onclick="triggerHTMLDownload()">
+            <i class="fa-solid fa-download"></i> Download CV
+          </button>
+        </div>
+      </div>
+
+      <!-- CV Paper Sheet -->
+      <div class="cv-paper" id="printableResumeCard">
+        <div class="cv-paper-header">
+          <div>
+            <h1 class="cv-title-name">Pradyumn Sharma</h1>
+            <p class="cv-subtitle-major">Commerce Undergraduate (B.Com) &bull; Accounting &amp; Office Administration</p>
+          </div>
+          <div class="cv-contact-details">
+            <div><i class="fa-solid fa-envelope"></i> pradyumn.sharma@example.com</div>
+            <div><i class="fa-solid fa-phone"></i> +91 98765 43210</div>
+            <div><i class="fa-solid fa-location-dot"></i> Vill. Khila, P.O. Dhulara, Teh. Sihunta, Dist. Chamba, H.P.</div>
+          </div>
+        </div>
+
+        <div class="cv-section-block">
+          <div class="cv-block-title"><i class="fa-solid fa-bullseye"></i> Career Objective</div>
+          <p class="cv-body-text">
+            Energetic and disciplined B.Com student with distinction-level academic qualifications seeking an entry-level position or internship in accounts and data operations. Committed to applying strong spreadsheet capabilities, fast learning, and organizational skills to support daily business workflows while continuing my studies.
+          </p>
+        </div>
+
+        <div class="cv-section-block">
+          <div class="cv-block-title"><i class="fa-solid fa-graduation-cap"></i> Academic Qualifications</div>
+          <table class="cv-education-table">
+            <thead>
+              <tr>
+                <th>Standard / Degree</th>
+                <th>Institution / School</th>
+                <th>Board / University</th>
+                <th>Performance / Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="Standard / Degree"><strong>B.Com (1st Year)</strong></td>
+                <td data-label="Institution / School">Govt. Degree College (GDC) Dharamshala</td>
+                <td data-label="Board / University">HPU (Himachal Pradesh University)</td>
+                <td data-label="Performance / Status"><span class="cv-score-pill">Pursuing</span></td>
+              </tr>
+              <tr>
+                <td data-label="Standard / Degree"><strong>Class XII (10+2)</strong></td>
+                <td data-label="Institution / School">Govt. School Dhulara</td>
+                <td data-label="Board / University">HPU / HP Board</td>
+                <td data-label="Performance / Status"><span class="cv-score-pill green">95.0% (Distinction)</span></td>
+              </tr>
+              <tr>
+                <td data-label="Standard / Degree"><strong>Class X (Matric)</strong></td>
+                <td data-label="Institution / School">Green Field Public School</td>
+                <td data-label="Board / University">HPU / HP Board</td>
+                <td data-label="Performance / Status"><span class="cv-score-pill green">91.0% (Distinction)</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="cv-columns-2">
+          <div class="cv-section-block">
+            <div class="cv-block-title"><i class="fa-solid fa-laptop-code"></i> Technical Skills</div>
+            <ul class="cv-list-items">
+              <li>Advanced MS Excel (Data tables, Formulas, VLOOKUP, Pivot)</li>
+              <li>MS Word (Professional correspondence &amp; documentation)</li>
+              <li>MS PowerPoint (Slide presentations and visual reports)</li>
+              <li>Data Entry and Spreadsheet Administration</li>
+            </ul>
+          </div>
+
+          <div class="cv-section-block">
+            <div class="cv-block-title"><i class="fa-solid fa-star"></i> Strengths</div>
+            <ul class="cv-list-items">
+              <li>Fast Learner with High Academic Discipline</li>
+              <li>Strong Numerical and Problem Solving Aptitude</li>
+              <li>Punctual with Efficient Time Management</li>
+              <li>Cooperative Team Worker and Attentive Listener</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="cv-columns-2">
+          <div class="cv-section-block">
+            <div class="cv-block-title"><i class="fa-solid fa-language"></i> Languages</div>
+            <p class="cv-body-text">
+              &bull; <strong>Hindi:</strong> Native (Read, Write, Speak)<br>
+              &bull; <strong>English:</strong> Professional Working Proficiency
+            </p>
+          </div>
+
+          <div class="cv-section-block">
+            <div class="cv-block-title"><i class="fa-solid fa-id-card"></i> Personal Details</div>
+            <p class="cv-body-text">
+              <strong>Date of Birth:</strong> 6 October 2009<br>
+              <strong>Age:</strong> 16 Years &bull; <strong>Nationality:</strong> Indian<br>
+              <strong>Address:</strong> Village Khila, P.O. Dhulara, Tehsil Sihunta, District Chamba, H.P.
+            </p>
+          </div>
+        </div>
+
+        <!-- Job Application Section in CV -->
+        <div class="cv-section-block">
+          <div class="cv-block-title"><i class="fa-solid fa-paper-plane"></i> Job Application Link</div>
+          <div class="cv-apply-box">
+            <p style="margin-bottom: 4px; font-size: 0.88rem; color: #000;">
+              <strong>Online Application Form:</strong>
+            </p>
+            <a href="https://forms.gle/pyxyRtVqUdqRRoqw7" target="_blank" rel="noopener noreferrer" class="cv-apply-link">
+              https://forms.gle/pyxyRtVqUdqRRoqw7
+            </a>
+          </div>
+        </div>
+
+        <div class="cv-declaration-box">
+          <strong>Declaration:</strong> I hereby declare that all the information provided above is complete, authentic, and true to the best of my knowledge and belief.
+        </div>
+
+        <div class="cv-sign-footer">
+          <div>
+            <p><strong>Date:</strong> 13 September 2026</p>
+            <p><strong>Place:</strong> Dharamshala, H.P.</p>
+          </div>
+          <div class="cv-sign-area">
+            <div class="cv-sign-bar"></div>
+            <p><strong>Pradyumn Sharma</strong><br><span style="font-size: 0.78rem; font-weight: normal;">(Signature)</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. APPLY FOR A JOB -->
+    <section id="apply">
+      <div class="section-head">
+        <span class="section-chip"><i class="fa-solid fa-briefcase"></i> Vacancy</span>
+        <h2>Apply for a Job</h2>
+        <p>Featured career opening matching current skills and academic profile</p>
+      </div>
+
+      <div class="apply-card-container">
+        <div class="apply-header-row">
+          <div>
+            <div class="job-title-h3">Office Assistant &amp; Spreadsheet Operator</div>
+            <div class="job-company-tag">TechnoCore Business Solutions &bull; Dharamshala / Hybrid</div>
+          </div>
+          <button class="btn btn-primary" onclick="handleJobApplication()">
+            Apply Now <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </button>
+        </div>
+
+        <p class="job-desc-p">
+          <strong>Role Description:</strong> Assist senior administrative and accounting personnel with spreadsheet maintenance in MS Excel, enter routine bookkeeping entries, draft formal reports in MS Word, and organize digitized files with speed and high accuracy.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- VIEW CV MODAL -->
+  <div class="modal-backdrop" id="cvModalBackdrop">
+    <div class="modal-window">
+      <div class="modal-top-bar">
+        <h3>Curriculum Vitae Preview — Pradyumn Sharma</h3>
+        <button class="modal-close-trigger" onclick="closeCVPreviewModal()">&times;</button>
+      </div>
+      <div class="modal-inner-scroll" id="modalCloneTarget"></div>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast-popup" id="toastNotification">
+    <i class="fa-solid fa-circle-check" style="color: #60a5fa;"></i>
+    <span id="toastNotificationMsg">Action complete</span>
+  </div>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    const targetApplicationUrl = "https://forms.gle/pyxyRtVqUdqRRoqw7";
+
+    // Mobile Navbar Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
+
+    // In-Page Toast Notification
+    function triggerToast(message) {
+      const toast = document.getElementById('toastNotification');
+      const msg = document.getElementById('toastNotificationMsg');
+      msg.textContent = message;
+      toast.classList.add('visible');
+      setTimeout(() => {
+        toast.classList.remove('visible');
+      }, 3200);
+    }
+
+    // Modal Controls
+    function openCVPreviewModal() {
+      const modal = document.getElementById('cvModalBackdrop');
+      const target = document.getElementById('modalCloneTarget');
+      const source = document.getElementById('printableResumeCard');
+
+      target.innerHTML = '';
+      const clone = source.cloneNode(true);
+      clone.style.boxShadow = 'none';
+      clone.style.border = 'none';
+      clone.style.padding = '0';
+      target.appendChild(clone);
+
+      modal.classList.add('active');
+    }
+
+    function closeCVPreviewModal() {
+      document.getElementById('cvModalBackdrop').classList.remove('active');
+    }
+
+    document.getElementById('cvModalBackdrop').addEventListener('click', (e) => {
+      if (e.target.id === 'cvModalBackdrop') closeCVPreviewModal();
+    });
+
+    // Native Browser Print
+    function triggerCVPrint() {
+      window.print();
+    }
+
+    // Clean HTML Document Download (with Job Apply link embedded)
+    function triggerHTMLDownload() {
+      const cvElement = document.getElementById('printableResumeCard');
+      
+      const htmlDoc = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pradyumn Sharma — Curriculum Vitae</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f8fafc;
+      color: #000000;
+      padding: 30px;
+      margin: 0;
+    }
+    .cv-paper {
+      background: #ffffff;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px;
+      border: 1px solid #cbd5e1;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    }
+    .cv-paper-header {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 3px solid #0f172a;
+      padding-bottom: 15px;
+      margin-bottom: 20px;
+    }
+    .cv-title-name {
+      font-size: 24pt;
+      font-weight: 800;
+      margin: 0;
+      color: #000000;
+    }
+    .cv-subtitle-major {
+      font-size: 11pt;
+      font-weight: 700;
+      color: #1d4ed8;
+      margin-top: 4px;
+    }
+    .cv-contact-details {
+      text-align: right;
+      font-size: 9.5pt;
+      color: #1e293b;
+      line-height: 1.5;
+    }
+    .cv-section-block {
+      margin-bottom: 18px;
+    }
+    .cv-block-title {
+      font-size: 11pt;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #0f172a;
+      border-bottom: 1.5px solid #cbd5e1;
+      padding-bottom: 4px;
+      margin-bottom: 8px;
+    }
+    .cv-body-text {
+      font-size: 9.5pt;
+      line-height: 1.5;
+      color: #000000;
+      margin: 0;
+    }
+    .cv-education-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 9.5pt;
+      margin-top: 6px;
+    }
+    .cv-education-table th, .cv-education-table td {
+      border: 1.5px solid #475569;
+      padding: 8px 10px;
+      text-align: left;
+      color: #000000;
+    }
+    .cv-education-table th {
+      background: #e2e8f0;
+      font-weight: 800;
+    }
+    .cv-score-pill {
+      font-weight: 700;
+    }
+    .cv-columns-2 {
+      display: flex;
+      gap: 25px;
+    }
+    .cv-columns-2 > div {
+      flex: 1;
+    }
+    .cv-list-items {
+      padding-left: 18px;
+      font-size: 9.5pt;
+      line-height: 1.5;
+      margin: 0;
+    }
+    .cv-apply-box {
+      background: #f8fafc;
+      border: 1.5px solid #cbd5e1;
+      border-left: 4px solid #1d4ed8;
+      padding: 10px 14px;
+      border-radius: 4px;
+      margin-top: 6px;
+    }
+    .cv-apply-link {
+      color: #1d4ed8;
+      font-weight: bold;
+      text-decoration: underline;
+      word-break: break-all;
+    }
+    .cv-declaration-box {
+      font-size: 9pt;
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-left: 4px solid #0f172a;
+      padding: 10px 14px;
+      margin-top: 12px;
+      line-height: 1.5;
+    }
+    .cv-sign-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-top: 25px;
+      padding-top: 15px;
+      font-size: 9pt;
+      color: #000000;
+    }
+    .cv-sign-area {
+      text-align: center;
+    }
+    .cv-sign-bar {
+      width: 150px;
+      border-bottom: 1.5px dashed #000000;
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="cv-paper">
+    ${cvElement.innerHTML}
+  </div>
+</body>
+</html>`;
+
+      const blob = new Blob([htmlDoc], { type: 'text/html' });
+      const downloadAnchor = document.createElement('a');
+      downloadAnchor.href = URL.createObjectURL(blob);
+      downloadAnchor.download = 'Pradyumn_Sharma_CV.html';
+      document.body.appendChild(downloadAnchor);
+      downloadAnchor.click();
+      document.body.removeChild(downloadAnchor);
+      URL.revokeObjectURL(downloadAnchor.href);
+
+      triggerToast("CV HTML file downloaded with Job Application Link!");
+    }
+
+    // Direct Job Application Button (Opens Google Form)
+    function handleJobApplication() {
+      triggerToast("Opening application form in a new tab...");
+      setTimeout(() => {
+        window.open(targetApplicationUrl, '_blank', 'noopener,noreferrer');
+      }, 250);
+    }
+  </script>
+</body>
+</html>
